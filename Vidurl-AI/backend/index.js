@@ -7,9 +7,11 @@ app.get('/test',(req,res)=>{
 });
 
 app.get('/create-story',(req,res)=>{
-    const url=new URL(req.url);
-    const urlForStory=url.searchParams.get('url')
-    return res.json(req.url);
+    const url=req.query.url;
+    console.log({
+        url,
+    });
+    return res.json('ok');
 });
 
 app.listen(8080,()=>console.log('Listing on port 8080'));
